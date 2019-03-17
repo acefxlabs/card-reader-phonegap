@@ -43,7 +43,7 @@ CardReaderPlugin.prototype.stop = function(successCallback, errorCallback) {
 };
 
 //-------------------------------------------------------------------
-if(!window.plugins) {
+/* if(!window.plugins) {
     window.plugins = {};
 }
 if (!window.plugins.CardReaderPlugin) {
@@ -52,7 +52,7 @@ if (!window.plugins.CardReaderPlugin) {
 
 if (typeof module != 'undefined' && module.exports) {
   module.exports = CardReaderPlugin;
-}
+} */
 
 
 //EOF
