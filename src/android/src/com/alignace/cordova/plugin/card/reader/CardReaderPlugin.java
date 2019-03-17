@@ -37,13 +37,15 @@ public class CardReaderPlugin extends CordovaPlugin {
 				@Override
 				public void updateBytes(String bytes) {
 					try {
+						System.out.print("\n");
 						System.out.print("//----------------------------------------------------------//");
 						System.out.print("\n");
 							System.out.print(bytes);
 						System.out.print("\n");
 						System.out.print("//----------------------------------------------------------//");
+						System.out.print("\n");
 						
-						Log.v(TAG, "UpdateBytes received" + bytes);
+						Log.v(TAG, "UpdateBytes received : " + bytes);
 						CardResult scanResult = getCardDetails(bytes);
 						if (scanResult != null) {
 							JSONObject j = new JSONObject();
@@ -53,7 +55,10 @@ public class CardReaderPlugin extends CordovaPlugin {
 							mCreditcardNumber.put(j);
 							callbackContext.success(mCreditcardNumber);
 						}else{
-							Log.e(TAG, "Error reading Card");
+							System.out.print("\n");
+							System.out.print(bytes);
+							System.out.print("\n");
+							Log.e(TAG, "Error reading Card - result is null");
 						}
 					} catch (Exception e) {
 						Log.e(TAG, "Error reading Card: " + e.getMessage());
@@ -112,11 +117,13 @@ public class CardReaderPlugin extends CordovaPlugin {
 			result.setExpiryMonth(Integer.parseInt(expiryMonth.toString()));
 			result.setExpiryYear(Integer.parseInt(expiryYear.toString()));
 		} catch (Exception e) {
+			System.out.print("\n");
 			System.out.print("||----------------------------------------||");
 			System.out.print("\n");
 				System.out.print(e);
 			System.out.print("\n");
 			System.out.print("||----------------------------------------||");
+			System.out.print("\n");
 			throw new RuntimeException(e);
 		}
 
