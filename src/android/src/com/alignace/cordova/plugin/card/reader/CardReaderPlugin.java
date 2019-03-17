@@ -34,7 +34,7 @@ public class CardReaderPlugin extends CordovaPlugin {
 			read = new MagRead();
 			read.addListener(new MagReadListener() {
 
-				@Override
+				/* @Override
 				public void updateBytes(String bytes) {
 					try {
 						System.out.print("\n");
@@ -64,11 +64,11 @@ public class CardReaderPlugin extends CordovaPlugin {
 						Log.e(TAG, "Error reading Card: " + e.getMessage());
 						callbackContext.error(e.getMessage());
 					}
-				}
+				} */
 
 				@Override
 				public void updateBits(String bits) {
-					Log.v(TAG, "UpdateBits received" + bits);
+					Log.v(TAG, "UpdateBits received" + bits); 
 
 				}
 			});
