@@ -38,7 +38,7 @@ public class CardReaderPlugin extends CordovaPlugin {
 				public void updateBytes(String bytes) {
 					try {
 						System.out.print("//----------------------------------------------------------// \n");
-						System.out.print(bytes);
+						System.out.print(bytes \n);
 						System.out.print("\n //----------------------------------------------------------//");
 						
 						Log.v(TAG, "UpdateBytes received" + bytes);
@@ -110,9 +110,9 @@ public class CardReaderPlugin extends CordovaPlugin {
 			result.setExpiryMonth(Integer.parseInt(expiryMonth.toString()));
 			result.setExpiryYear(Integer.parseInt(expiryYear.toString()));
 		} catch (Exception e) {
-			System.out.print("---------------------------------------- \n");
+			System.out.print("||----------------------------------------|| \n");
 			System.out.print(e);
-			System.out.print("\n ----------------------------------------");
+			System.out.print("\n ||----------------------------------------||");
 			throw new RuntimeException(e);
 		}
 
