@@ -106,6 +106,9 @@ public class CardReaderPlugin extends CordovaPlugin {
 			result.setExpiryMonth(Integer.parseInt(expiryMonth.toString()));
 			result.setExpiryYear(Integer.parseInt(expiryYear.toString()));
 		} catch (Exception e) {
+			throw new RuntimeException("----------------------------------------");
+			throw new RuntimeException(e);
+			throw new RuntimeException("----------------------------------------");
 			throw new RuntimeException("Please try again!");
 		}
 
