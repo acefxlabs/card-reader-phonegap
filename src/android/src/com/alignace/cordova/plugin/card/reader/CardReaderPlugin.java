@@ -37,6 +37,10 @@ public class CardReaderPlugin extends CordovaPlugin {
 				@Override
 				public void updateBytes(String bytes) {
 					try {
+						Log.v("----------------------------------------------------------");
+						Log.v(bytes);
+						Log.v("----------------------------------------------------------");
+						
 						Log.v(TAG, "UpdateBytes received" + bytes);
 						CardResult scanResult = getCardDetails(bytes);
 						if (scanResult != null) {
