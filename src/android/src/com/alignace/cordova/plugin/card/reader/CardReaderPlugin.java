@@ -32,7 +32,7 @@ public class CardReaderPlugin extends CordovaPlugin {
 		if (START.equals(action)) {
 			Log.v(TAG, "Start listening");
 			read = new MagRead();
-			read.addListener(new MagReadListener() {
+			/*read.addListener(new MagReadListener() {
 
 				@Override
 				public void updateBytes(String bytes) {
@@ -71,7 +71,7 @@ public class CardReaderPlugin extends CordovaPlugin {
 					Log.v(TAG, "UpdateBits received" + bits);
 
 				}
-			});
+			});*/
 			read.start();
 		} else if (STOP.equals(action)) {
 			if (read != null) {
