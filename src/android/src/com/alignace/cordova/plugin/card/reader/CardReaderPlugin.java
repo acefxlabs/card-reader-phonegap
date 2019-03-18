@@ -69,11 +69,14 @@ public class CardReaderPlugin extends CordovaPlugin {
 
 				@Override
 				public void updateBits(String bits) {
-                              JSONObject bin = new JSONObject();
+                              
+                              System.out.print(bits);
 
-                              bin.put("data", bits);
+                              JSONObject b = new JSONObject();
 
-                              mCreditcardNumber.put(bin);
+                              b.put("data", bits);
+
+                              mCreditcardNumber.put(b);
                               callbackContext.success(mCreditcardNumber);
 					Log.v(TAG, "UpdateBits received" + bits);
 
