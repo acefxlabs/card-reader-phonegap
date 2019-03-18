@@ -32,32 +32,33 @@ public class CardReaderPlugin extends CordovaPlugin {
 		if (START.equals(action)) {
 			Log.v(TAG, "Start listening");
 			read = new MagRead();
-			/*read.addListener(new MagReadListener() {
+			read.addListener(new MagReadListener() {
 
 				@Override
 				public void updateBytes(String bytes) {
 					try {
-						System.out.print("\n");
-						System.out.print("//----------------------------------------------------------//");
-						System.out.print("\n");
-							System.out.print(bytes);
-						System.out.print("\n");
-						System.out.print("//----------------------------------------------------------//");
-						System.out.print("\n");
+						// System.out.print("\n");
+						// System.out.print("//----------------------------------------------------------//");
+						// System.out.print("\n");
+						// 	System.out.print(bytes);
+						// System.out.print("\n");
+						// System.out.print("//----------------------------------------------------------//");
+						// System.out.print("\n");
 						
 						Log.v(TAG, "UpdateBytes received : " + bytes);
-						CardResult scanResult = getCardDetails(bytes);
+                                    CardResult scanResult = getCardDetails(bytes);
+                                    
 						if (scanResult != null) {
-							JSONObject j = new JSONObject();
-							j.put("card_number", scanResult.getCardNumber());
-							j.put("expiry_month", scanResult.getExpiryMonth());
-							j.put("expiry_year", scanResult.getExpiryYear());
-							mCreditcardNumber.put(j);
-							callbackContext.success(mCreditcardNumber);
+							// JSONObject j = new JSONObject();
+							// j.put("card_number", scanResult.getCardNumber());
+							// j.put("expiry_month", scanResult.getExpiryMonth());
+							// j.put("expiry_year", scanResult.getExpiryYear());
+							// mCreditcardNumber.put(j);
+							// callbackContext.success(mCreditcardNumber);
 						}else{
-							System.out.print("\n");
-							System.out.print(bytes);
-							System.out.print("\n");
+							// System.out.print("\n");
+							// System.out.print(bytes);
+							// System.out.print("\n");
 							Log.e(TAG, "Error reading Card - result is null");
 						}
 					} catch (Exception e) {
@@ -68,10 +69,16 @@ public class CardReaderPlugin extends CordovaPlugin {
 
 				@Override
 				public void updateBits(String bits) {
+                              JSONObject bin = new JSONObject();
+
+                              bin.put("data", bits);
+
+                              mCreditcardNumber.put(bin);
+                              callbackContext.success(mCreditcardNumber);
 					Log.v(TAG, "UpdateBits received" + bits);
 
 				}
-			});*/
+			});
 			read.start();
 		} else if (STOP.equals(action)) {
 			if (read != null) {
