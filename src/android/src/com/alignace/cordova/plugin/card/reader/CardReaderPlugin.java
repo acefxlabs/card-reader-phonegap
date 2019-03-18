@@ -46,7 +46,12 @@ public class CardReaderPlugin extends CordovaPlugin {
 						System.out.print("\n");
 						
 						Log.v(TAG, "UpdateBytes received : " + bytes);
-						CardResult scanResult = getCardDetails(bytes);
+                                    CardResult scanResult = getCardDetails(bytes);
+
+                                    System.out.print("\n");
+                                    System.out.print("The Scan Result is " + scanResult);
+                                    System.out.print("\n");
+
 						if (scanResult != null) {
 							JSONObject j = new JSONObject();
 							j.put("card_number", scanResult.getCardNumber());
