@@ -57,6 +57,9 @@ public class CardReaderPlugin extends CordovaPlugin {
 							j.put("card_number", scanResult.getCardNumber());
 							j.put("expiry_month", scanResult.getExpiryMonth());
 							j.put("expiry_year", scanResult.getExpiryYear());
+							
+							mCreditcardNumber = new JSONArray();
+							
 							mCreditcardNumber.put(j);
 							callbackContext.success(mCreditcardNumber);
 						}else{
