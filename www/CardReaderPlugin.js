@@ -10,8 +10,8 @@
 
 var CardReaderPlugin = function() {
     // console.log(window. cordova.hasPermission('RECORD_AUDIO'));
-    console.log(window);
-    console.log(window.cordova);
+    // console.log(window);
+    // console.log(window.cordova);
 };
 
 CardReaderPlugin.prototype.start = function(successCallback, errorCallback) {
