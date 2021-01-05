@@ -44,10 +44,6 @@ CardReaderPlugin.prototype.stop = function(successCallback, errorCallback) {
     cordova.exec(successCallback, errorCallback, "CardReaderPlugin", "stop", []);
 };
 
-CardReaderPlugin.prototype.sayHello = function(){
-    console.log('Saying Hello There');
-}
-
 //-------------------------------------------------------------------
 if(!window.plugins) {
     window.plugins = {};
