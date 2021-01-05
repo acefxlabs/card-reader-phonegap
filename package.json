@@ -1,0 +1,5 @@
+{
+	"name" : "card-reder-phonegap",
+	"version" : "1.2.0",
+	"description": "Cordova plugin for 3.5mm Headphone Jack Mini Magnetic Mobile Card Reader"
+}
